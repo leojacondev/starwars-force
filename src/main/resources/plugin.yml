@@ -1,0 +1,10 @@
+name: StarWarsForce
+version: '${project.version}'
+main: dev.leojacon.starwarsforce.StarwarsForce
+api-version: 1.18
+prefix: StarWarsForce
+authors: [ leojacondev ]
+description: Use the force against minecraft players, and don't let them catch you!
+website: leojacon.dev
+commands:
+  theforce:
