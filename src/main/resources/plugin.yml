@@ -1,6 +1,6 @@
 name: StarWarsForce
 version: '${project.version}'
-main: dev.leojacon.starwarsforce.StarwarsForce
+main: dev.leojacon.starwarsforce.StarWarsForce
 api-version: 1.18
 prefix: StarWarsForce
 authors: [ leojacondev ]

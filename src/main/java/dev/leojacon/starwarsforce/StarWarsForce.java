@@ -10,10 +10,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
 
-public final class StarwarsForce extends JavaPlugin {
+public final class StarWarsForce extends JavaPlugin {
 
     @Getter
-    public static StarwarsForce instance;
+    public static StarWarsForce instance;
     @Getter
     public static int FORCE_RANGE = 5;
 
