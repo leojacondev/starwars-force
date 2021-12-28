@@ -3,6 +3,7 @@ package dev.leojacon.starwarsforce.listener;
 import dev.leojacon.starwarsforce.StarWarsForce;
 import dev.leojacon.starwarsforce.event.ForcePlayerEvent;
 import lombok.var;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
@@ -22,6 +23,7 @@ public class ForceListener implements Listener {
         var attackedPlayer = getPlayerInSight(p, range);
 
         if(attackedPlayer != null) {
+            if(attackedPlayer.getGameMode().equals(GameMode.SPECTATOR)) return;
             attackedPlayer.setVelocity(p.getLocation().getDirection().multiply(StarWarsForce.FORCE_POWER * 0.1));
         }
 
