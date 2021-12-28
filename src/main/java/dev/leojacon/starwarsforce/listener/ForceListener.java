@@ -23,7 +23,6 @@ public class ForceListener implements Listener {
         var attackedPlayer = getPlayerInSight(p, range);
 
         if(attackedPlayer != null) {
-            if(attackedPlayer.getGameMode().equals(GameMode.SPECTATOR)) return;
             attackedPlayer.setVelocity(p.getLocation().getDirection().multiply(StarWarsForce.FORCE_POWER * 0.1));
         }
 
@@ -36,6 +35,9 @@ public class ForceListener implements Listener {
 
         //Filtering Players
         nearbyEntities.removeIf(entity -> (!(entity instanceof Player)));
+
+        //Filtering Spectator
+        nearbyEntities.removeIf(entity -> ((Player) entity).getGameMode().equals(GameMode.SPECTATOR));
 
         //Populate Sight Locations
         bSight.forEach(block -> sightLocs.add(block.getLocation()));
