@@ -1,6 +1,8 @@
 package dev.leojacon.starwarsforce.command;
 
+import dev.leojacon.starwarsforce.StarWarsForce;
 import dev.leojacon.starwarsforce.manager.Manager;
+import dev.leojacon.starwarsforce.util.Messages;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,13 +19,13 @@ public class TheForceCommand implements CommandExecutor {
             if(hasPermission(player)) {
                 if(Manager.getForce(player)) {
                     Manager.setForce(player, false);
-                    player.sendMessage("§c§lRemember, The Force Will Be With You, Always");
+                    player.sendMessage(Messages.FORCE_DISABLED);
                 } else {
                     Manager.setForce(player, true);
-                    player.sendMessage("§a§lNow I Know There Is Something Strong Than Fear — Far Stronger. The Force.");
+                    player.sendMessage(Messages.FORCE_ENABLED);
                 }
             } else {
-                player.sendMessage("§cYou cannot use the force little padawan");
+                player.sendMessage(Messages.NO_PERMISSION);
             }
 
         } else {
@@ -34,7 +36,7 @@ public class TheForceCommand implements CommandExecutor {
     }
 
     protected boolean hasPermission(CommandSender sender) {
-        return sender.hasPermission("starwars.useforce");
+        return sender.hasPermission(StarWarsForce.PERMISSION);
     }
 
     protected boolean isPlayer(CommandSender sender) {

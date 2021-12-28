@@ -1,6 +1,6 @@
 package dev.leojacon.starwarsforce.listener;
 
-import dev.leojacon.starwarsforce.event.ForcePlayerMoveEvent;
+import dev.leojacon.starwarsforce.event.ForcePlayerEvent;
 import dev.leojacon.starwarsforce.manager.Manager;
 import lombok.var;
 import org.bukkit.Bukkit;
@@ -15,7 +15,7 @@ public class PlayerMoveListener implements Listener {
         var player = event.getPlayer();
         var hasForce = Manager.getForce(player);
         if(hasForce) {
-            Bukkit.getServer().getPluginManager().callEvent(new ForcePlayerMoveEvent(player, event.getFrom(), event.getTo()));
+            Bukkit.getServer().getPluginManager().callEvent(new ForcePlayerEvent(player));
         }
     }
 

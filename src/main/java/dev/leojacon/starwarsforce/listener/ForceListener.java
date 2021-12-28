@@ -1,7 +1,7 @@
 package dev.leojacon.starwarsforce.listener;
 
 import dev.leojacon.starwarsforce.StarWarsForce;
-import dev.leojacon.starwarsforce.event.ForcePlayerMoveEvent;
+import dev.leojacon.starwarsforce.event.ForcePlayerEvent;
 import lombok.var;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
@@ -16,13 +16,13 @@ import java.util.List;
 public class ForceListener implements Listener {
 
     @EventHandler
-    public void onMove(ForcePlayerMoveEvent event) {
+    public void onMove(ForcePlayerEvent event) {
         var p = event.getPlayer();
         var range = StarWarsForce.FORCE_RANGE;
         var attackedPlayer = getPlayerInSight(p, range);
 
         if(attackedPlayer != null) {
-            attackedPlayer.setVelocity(p.getLocation().getDirection().multiply(0.8));
+            attackedPlayer.setVelocity(p.getLocation().getDirection().multiply(StarWarsForce.FORCE_POWER * 0.1));
         }
 
     }

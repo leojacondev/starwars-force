@@ -1,14 +1,18 @@
 package dev.leojacon.starwarsforce.event;
 
+import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.player.PlayerMoveEvent;
 
-public class ForcePlayerMoveEvent extends PlayerMoveEvent {
+public class ForcePlayerEvent extends Event {
 
-    public ForcePlayerMoveEvent(Player player, Location from, Location to) {
-        super(player, from, to);
+    @Getter
+    public Player player;
+
+    public ForcePlayerEvent(Player player) {
+        this.player = player;
     }
 
     private static final HandlerList handlers = new HandlerList();

@@ -1,0 +1,26 @@
+# StarWars Force Plugin - by @leojacondev
+# IGN: HyperGalactic
+# Discord: HyperGalactic#0001
+
+# Range Detection
+# How many blocks the plugin will check for players
+# around you to apply the force? (DEFAULT IS 5)
+force-range: 5
+
+# Force Power
+# How powerful the force is? This defines how much
+# will other players feel it (DEFAULT IS 8 || CHOOSE 1-10);
+force-power: 8
+
+# Plugin permission
+# What permission should the player
+# have to use the force?
+permission: "starwars.useforce"
+
+# Messages
+# Here's some messages you can change!
+# Feel free to customize it.
+
+command-no-permission: "&c&lYou cannot use the force little padawan"
+command-force-enabled: "&a&lNow I Know There Is Something Strong Than Fear — Far Stronger. The Force."
+command-force-disabled: "&c&lRemember, The Force Will Be With You, Always"
